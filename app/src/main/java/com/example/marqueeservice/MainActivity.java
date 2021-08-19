@@ -26,25 +26,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         connection = new ServiceConnection() {
-
             @Override
             public void onServiceConnected(ComponentName name, IBinder service) {
                 ledStatusService = (LedStatusService) service;
                 flag = true;
             }
-
             @Override
             public void onServiceDisconnected(ComponentName name) {
             }
         };
-
         bindService(new Intent(MainActivity.this, LedService.class), connection, Context.BIND_AUTO_CREATE);
-
-
     }
-
     @Override
     protected void onResume() {
 
@@ -60,11 +53,9 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-
 //            }
 //        });
         Button button = findViewById(R.id.button);
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,11 +66,8 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-
             }
         });
-
-
         super.onResume();
     }
 

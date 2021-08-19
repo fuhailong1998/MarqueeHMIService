@@ -18,7 +18,7 @@ public class LedService extends Service {
     private final Binder mBinder = new LedStatusService.Stub() {
         @Override
         public void changeLedStatus(LedStatus ledStatus) throws RemoteException {
-            Log.d("TAG", "changeLedStatus: "+ledStatus);
+            Log.d("MARQUEE", "changeLedStatus: "+ledStatus.lednum+" to "+ledStatus.ledstatus);
         }
 
         @Override
